@@ -1,15 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/home', function () {return view('home');});
 
-Route::get('login', function() {
-    return view('login');
-})-> name('login');
+//login
+Route::get('/login', function() {return view('login');})->name('login');
 
-Route::post('login', [LoginController::class, 'attempt'])->name('login.attempt');
+Route::post('/login', [LoginController::class, 'login'])->name('login.attempt');    
