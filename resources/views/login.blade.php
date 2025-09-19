@@ -1,7 +1,7 @@
-<form method="POST" action=" {{ route('login.attempt') }} ">
+<form method="POST" action=" {{ route('login') }} ">
     @csrf
-    <input type="email" placeholder="Email" required />
-    <input type="password" placeholder="Password" required/>
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required/>
     <button type="submit">Submit</button>
 
 </form>
